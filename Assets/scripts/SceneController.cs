@@ -22,7 +22,7 @@ public class SceneController : MonoBehaviour
     private IEnumerator LoadSceneWithFade(string sceneName)
     {
         fade.Play(fadeOutAnimationName, 0 , 0f);
-        yield return new WaitForSeconds(1f),
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
     }
 }
