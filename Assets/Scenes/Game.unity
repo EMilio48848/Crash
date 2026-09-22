@@ -119,54 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &246761977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 246761978}
-  - component: {fileID: 246761979}
-  m_Layer: 0
-  m_Name: JumpController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &246761978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246761977}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99906623, z: -0, w: -0.043204788}
-  m_LocalPosition: {x: -0.0015873909, y: 0, z: -0.042060375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1180998615}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &246761979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246761977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 596d3c5c6584b154b83893e8c88b2ef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JumpController
-  inputController: {fileID: 1931384941}
-  characterController: {fileID: 1180998616}
-  jumpVelocity: 8
-  gravity: -15
 --- !u!1 &475315474
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,55 +300,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8146163057604209152, guid: 13d5c58014503cc4d97467b84354c50b, type: 3}
   m_PrefabInstance: {fileID: 702563969}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &768421148
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 768421149}
-  - component: {fileID: 768421150}
-  m_Layer: 0
-  m_Name: MovementController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &768421149
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768421148}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0305504, y: -0.7064465, z: -0.7064465, w: -0.0305504}
-  m_LocalPosition: {x: -0.0015873909, y: 0, z: -0.042060375}
-  m_LocalScale: {x: 99.99998, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1180998615}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768421150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768421148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 578b934d018b6514a90ed12b4c5478cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MovementController
-  inputController: {fileID: 1931384941}
-  characterController: {fileID: 1180998616}
-  jumpController: {fileID: 246761979}
-  movementSpeed: 5
-  rotationSpeed: 10
 --- !u!1 &933962839
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +490,7 @@ Transform:
   m_GameObject: {fileID: 1179427442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.03, y: 1.93, z: -6.65}
+  m_LocalPosition: {x: 3.03, y: 1.93, z: -10.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -647,6 +550,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1180998615}
   - component: {fileID: 1180998616}
+  - component: {fileID: 1180998618}
+  - component: {fileID: 1180998617}
+  - component: {fileID: 1180998619}
+  - component: {fileID: 1180998620}
   m_Layer: 0
   m_Name: Mandalorian
   m_TagString: Untagged
@@ -662,16 +569,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180998613}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 2.78205, y: 1.07297, z: -4.11919}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2030110705}
-  - {fileID: 768421149}
-  - {fileID: 246761978}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!143 &1180998616
 CharacterController:
   m_ObjectHideFlags: 0
@@ -696,7 +601,84 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.78, z: 0}
+  m_Center: {x: 0, y: 0.96, z: 0}
+--- !u!114 &1180998617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596d3c5c6584b154b83893e8c88b2ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JumpController
+  inputController: {fileID: 1931384941}
+  characterController: {fileID: 1180998616}
+  jumpVelocity: 4
+  gravity: -15
+--- !u!114 &1180998618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578b934d018b6514a90ed12b4c5478cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementController
+  inputController: {fileID: 1931384941}
+  characterController: {fileID: 1180998616}
+  jumpController: {fileID: 1180998617}
+  movementSpeed: 5
+  rotationSpeed: 10
+--- !u!114 &1180998619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fab2e5d22634a40a50ea1b4b9aec37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAnimationController
+  characterController: {fileID: 1180998616}
+  animator: {fileID: 2030110707}
+  animationConfiguration: {fileID: 11400000, guid: 9ec098d25fbc8214891e5a61caeb16e9, type: 2}
+  crossFadeDuration: 0.1
+--- !u!114 &1180998620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf693bb8aa4fcc42822e7c17bb30181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollController
+  inputController: {fileID: 1931384941}
+  onRoll:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1180998619}
+        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
+        m_MethodName: Roll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1226406646
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +946,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0015873909
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -972,23 +954,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.042060375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.043204788
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.99906623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -996,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -184.952
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ba151b013993c64b87abeb6db1de1ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
