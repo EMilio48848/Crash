@@ -16,6 +16,7 @@ public class RollController : MonoBehaviour
 
 
     private bool isRolling = false;
+    public bool IsRolling => isRolling;
 
 
     private void Update()

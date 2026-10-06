@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameController : MonoBehaviour
     private Transform player;
     [SerializeField]
     private Transform startPosition;
+    [SerializeField]
+    private UnityEvent onGameStart;
 
     private void Start()
     {
@@ -18,5 +22,6 @@ public class GameController : MonoBehaviour
     {
         coinsController.Initialize();
         player.position = startPosition.position;
+        onGameStart?.Invoke();
     }
 }
