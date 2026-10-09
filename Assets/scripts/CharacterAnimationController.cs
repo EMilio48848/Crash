@@ -24,6 +24,7 @@ public class CharacterAnimationController : MonoBehaviour
 
     public void Die()
     {
+        IsActive = false;
         PlayAnimation(animationConfiguration.dieAnimationName);
     }
 

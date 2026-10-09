@@ -23,18 +23,18 @@ public class PlayerCollision : MonoBehaviour
             }
             else if(other.CompareTag("Enemy"))
             {
-                  if(TryGetComponent(out Enemy enemy))
+                  if(other.TryGetComponent(out Enemy enemy))
                   {
                         if(rollController.IsRolling)
                         {
                         enemy.Die();
                         onEnemyHit?.Invoke(enemy.transform);
                         }
-                  }
-                  else
-                  {
+                        else
+                        {
                         PoolManager.Instance.GetObject(enemy.HitParticles, transform.position);
                         onPlayerLose?.Invoke();
+                        }
                   }
             }
       }
