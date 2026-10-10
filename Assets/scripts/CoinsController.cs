@@ -1,6 +1,5 @@
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class CoinsController : MonoBehaviour
