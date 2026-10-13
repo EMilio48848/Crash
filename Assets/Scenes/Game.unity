@@ -4028,6 +4028,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.004101015, y: 0.004101015, z: 0.0005852864}
   m_Center: {x: 0, y: -0.0000000012805684, z: 0}
+--- !u!1 &1133730654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133730655}
+  - component: {fileID: 1133730656}
+  m_Layer: 0
+  m_Name: RollController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1133730655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133730654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180998615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1133730656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133730654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.79, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1001 &1141330576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4544,6 +4597,7 @@ GameObject:
   - component: {fileID: 1180998619}
   - component: {fileID: 1180998620}
   - component: {fileID: 1180998621}
+  - component: {fileID: 1180998622}
   m_Layer: 0
   m_Name: Mandalorian
   m_TagString: Untagged
@@ -4565,6 +4619,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2030110705}
+  - {fileID: 1133730655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!143 &1180998616
@@ -4697,7 +4752,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   rollDuration: 1
-  roolEffectPrefab: {fileID: 66354538408824095, guid: f059a4ddd5f7e1d46a10631505ac8356, type: 3}
+  cooldown: 0.5
+  rollCollider: {fileID: 1133730656}
+  rollEffectPrefab: {fileID: 66354538408824095, guid: f059a4ddd5f7e1d46a10631505ac8356, type: 3}
   effectOffsetY: 1
 --- !u!114 &1180998621
 MonoBehaviour:
@@ -4768,21 +4825,9 @@ MonoBehaviour:
   onPlayerLose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1931384941}
-        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
-        m_MethodName: set_IsActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1180998619}
-        m_TargetAssemblyTypeName: CharacterAnimationController, Assembly-CSharp
-        m_MethodName: Die
+      - m_Target: {fileID: 2084337372}
+        m_TargetAssemblyTypeName: Lives, Assembly-CSharp
+        m_MethodName: LoseLife
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4792,31 +4837,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1711293679}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: GoToSceneWithFade
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Game
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 459502297}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: GameOver
-          m_BoolArgument: 0
-        m_CallState: 2
   rollController: {fileID: 1180998620}
+--- !u!114 &1180998622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180998613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ba8174f946f734a82f6e331ac8c4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blink
+  blinkInterval: 0.1
 --- !u!1 &1181625669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f363b54725b0ada499adb0dc29bf4b90, type: 3}
@@ -8258,6 +8292,89 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2084337371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084337373}
+  - component: {fileID: 2084337372}
+  m_Layer: 0
+  m_Name: PlayerLives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2084337372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084337371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6156b5cae82b9d48bdfb0f17b4d8b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lives
+  startingLives: 2
+  onLoseLive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1180998622}
+        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
+        m_MethodName: StartBlink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1931384941}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: set_IsActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  startInvincibility:
+    m_PersistentCalls:
+      m_Calls: []
+  endInvincibility:
+    m_PersistentCalls:
+      m_Calls: []
+  invincibilityDuration: 2
+  fullinvincibilityDuration: 4
+--- !u!4 &2084337373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084337371}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 50.23, y: 4.61, z: -23.03}
+  m_LocalScale: {x: 9.4, y: 9.4, z: 9.4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2108282554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8650,3 +8767,4 @@ SceneRoots:
   - {fileID: 528449999}
   - {fileID: 923408618}
   - {fileID: 980682796}
+  - {fileID: 2084337373}
