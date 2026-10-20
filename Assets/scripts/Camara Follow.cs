@@ -10,7 +10,7 @@ public class CamaraFollow : MonoBehaviour
     private float jumpSmoothTime = 0.3f;
     private Vector3 offset;
     private Vector3 velocity;
-    private void Start()
+    private void Awake()
     {
         offset = transform.position - target.position;
     }

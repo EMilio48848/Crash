@@ -43,5 +43,19 @@ public class PlayerCollision : MonoBehaviour
                         }
                   }
             }
+            else if(other.CompareTag("Box"))
+            {
+                  if(other.TryGetComponent(out Box box))
+                  {
+                        if(rollController.IsRolling)
+                        {
+                              box.Break();
+                        }
+                        else
+                        {
+                              box.CheckCharacter(transform);
+                        }
+                  }
+            }
       }
 }
