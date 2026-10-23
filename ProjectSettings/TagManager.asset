@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - Enemy
   - Box
+  - Checkpoint
+  - Cliff
   layers:
   - Default
   - TransparentFX

@@ -26,13 +26,17 @@ public class JumpController : MonoBehaviour
             }
             if(inputController.Jump)
             {
-                onJump?.Invoke();
-                verticalVelocity = jumpVelocity;
+                Jump();
             }
         }
         else
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
+    }
+    public void Jump()
+    {
+        onJump?.Invoke();
+        verticalVelocity = jumpVelocity;
     }
 }
