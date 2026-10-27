@@ -403,6 +403,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1180998617}
+        m_TargetAssemblyTypeName: JumpController, Assembly-CSharp
+        m_MethodName: set_HasGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -919,18 +931,6 @@ MonoBehaviour:
   onGameStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 147679798}
-        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
-        m_MethodName: Initialize
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1330293332}
         m_TargetAssemblyTypeName: CoinsController, Assembly-CSharp
         m_MethodName: Initialize
@@ -955,9 +955,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onGameRestart:
-    m_PersistentCalls:
-      m_Calls:
+      - m_Target: {fileID: 656090909}
+        m_TargetAssemblyTypeName: Continues, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 147679798}
         m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
         m_MethodName: Initialize
@@ -968,11 +977,26 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  onGameRestart:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 295916697}
         m_TargetAssemblyTypeName: CheckPointController, Assembly-CSharp
         m_MethodName: MovePlayerToCheckpoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 147679798}
+        m_TargetAssemblyTypeName: PlayerStates, Assembly-CSharp
+        m_MethodName: Initialize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2409,6 +2433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Continues
   continuesText: {fileID: 1191449261}
+  initialContinues: 3
 --- !u!1 &661135046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,6 +3871,7 @@ MonoBehaviour:
   target: {fileID: 1180998615}
   walkSmoothTime: 0.15
   jumpSmoothTime: 0.4
+  downLimit: -1
 --- !u!1 &1180998613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5349,10 +5375,10 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Lose
           m_BoolArgument: 0
         m_CallState: 2
-  deathDelay: 3
+  deathDelay: 4
 --- !u!1001 &1536030514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6303,7 +6329,7 @@ Transform:
   m_GameObject: {fileID: 1786367788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70143473, z: -0, w: 0.71273375}
-  m_LocalPosition: {x: 2.56, y: -15.949999, z: 11.95}
+  m_LocalPosition: {x: 2.56, y: -5.9, z: 11.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6328,8 +6354,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 103.3036, y: 2.0270398, z: 137.89452}
-  m_Center: {x: 51.151546, y: -0.5135199, z: 26.038267}
+  m_Size: {x: 164.755, y: 2.0270398, z: 137.89452}
+  m_Center: {x: 20.425745, y: -0.5135199, z: 26.03822}
 --- !u!1001 &1807236662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8191,7 +8217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6156b5cae82b9d48bdfb0f17b4d8b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lives
-  startingLives: 2
+  startingLives: 3
   onLoseLive:
     m_PersistentCalls:
       m_Calls:

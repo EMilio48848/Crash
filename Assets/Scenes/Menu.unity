@@ -1896,6 +1896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1736075606}
     m_Modifications:
+    - target: {fileID: 2920777481276860447, guid: 13d5c58014503cc4d97467b84354c50b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5766702400541769888, guid: 13d5c58014503cc4d97467b84354c50b, type: 3}
       propertyPath: m_Name
       value: Fade

@@ -8,6 +8,8 @@ public class CamaraFollow : MonoBehaviour
     private float walkSmoothTime = 0.15f;
     [SerializeField]
     private float jumpSmoothTime = 0.3f;
+    [SerializeField]
+    private float downLimit = -1f;
     private Vector3 offset;
     private Vector3 velocity;
     private void Awake()
@@ -20,6 +22,6 @@ public class CamaraFollow : MonoBehaviour
         float x = Mathf.SmoothDamp(transform.position.x, targetPosition.x, ref velocity.x, walkSmoothTime);
         float y = Mathf.SmoothDamp(transform.position.y, targetPosition.y, ref velocity.y, jumpSmoothTime);
         float z = Mathf.SmoothDamp(transform.position.z, targetPosition.z, ref velocity.z, walkSmoothTime);
-        transform.position = new Vector3(x,y,z);
+        transform.position = new Vector3(x,Mathf.Max(y,downLimit), z);
     }
 }
