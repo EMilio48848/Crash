@@ -11,6 +11,9 @@ TagManager:
   - Checkpoint
   - Cliff
   - Mask
+  - Continues
+  - Continue
+  - LevelGem
   layers:
   - Default
   - TransparentFX
