@@ -19,7 +19,7 @@ public class MovementController : MonoBehaviour
         Vector2 input = canMove ? inputController.Movement : Vector2.zero;
         Vector3 movement = new Vector3(input.x, jumpController.VerticalVelocity, input.y);
         Vector3 movementDirection = new Vector3(input.x, 0f, input.y);
-        if(movementDirection.sqrMagnitude > 0f)
+        if(movementDirection.sqrMagnitude > 0f && canMove)
         {
             RotateTowards(movementDirection);
         }
