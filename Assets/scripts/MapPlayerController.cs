@@ -15,7 +15,7 @@ public class MapPlayerController : MonoBehaviour
         {
             currentLevel = value;
             transform.position = value.transform.position;
-            characterAnimator.Play("idle");
+            characterAnimator.Play("Idle");
             canWalk = true;
             transform.LookAt(new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z));
         }
@@ -28,11 +28,11 @@ public void Initialize(MapLevel startingLevel)
     currentLevel = startingLevel;
 }
 
-private void MoveToLevel(MapLevel newLevel)
+public void MoveToLevel(MapLevel newLevel)
     {
         levelToMove = newLevel;
         canWalk = false;
-        characterAnimator.Play("Walk");
+        characterAnimator.Play("Run");
     }
 
 private void Update()

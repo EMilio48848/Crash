@@ -21,12 +21,12 @@ public class MapController : MonoBehaviour
         CheckLevel(mapPlayerController.CurrentLevel.PreviousLevel, direction);
     }
 
-    private void CheckLevel(MapLevel level, MapDirection direction)
+    private void CheckLevel(MapLevelData level, MapDirection direction)
     {
         if(level == null) return;
-        if(level.NextLevel.direction == direction)
+        if(level.direction == direction)
         {
-            mapPlayerController.MoveToLevel(level.NextLevel.level);
+            mapPlayerController.MoveToLevel(level.level);
         }
     }
 

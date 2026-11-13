@@ -8,7 +8,7 @@ public class MapLevel : MonoBehaviour
     private MapLevelData previousLevel;
     [SerializeField]
     private string levelName;
-    public  string LevelNAme => levelName;
+    public  string LevelName => levelName;
     public MapLevelData NextLevel => nextLevel;
     public MapLevelData PreviousLevel => previousLevel;
 }

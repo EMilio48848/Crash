@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c998b8f33ddb0f49b19cf6a1c8a0231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemParticles: {fileID: 3489455498036863003}
+  itemParticles: {fileID: 864437655019880966, guid: 0ddd20f3fb19147cba0796c94fa105b4, type: 3}
   itemSoundName: aku_aku
 --- !u!1001 &2186253838757739173
 PrefabInstance:
