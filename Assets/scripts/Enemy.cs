@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private Animator characterAnimator;
+    protected Animator characterAnimator;
     [SerializeField]
     private GameObject hitPaticles;
     public GameObject HitParticles => hitPaticles;
