@@ -18,8 +18,9 @@ public class Enemy : MonoBehaviour
         isAlive = true;
         enemyCollider.enabled = true;
     }
-    public void Die()
+    public virtual void Die()
     {
+        StopAllCoroutines();
         isAlive = false;
         enemyCollider.enabled = false;
     }

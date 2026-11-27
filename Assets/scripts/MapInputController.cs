@@ -21,7 +21,7 @@ public class MapInputController : MonoBehaviour
             onInputChanged.Invoke(MapDirection.Left);
         if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             onInputChanged.Invoke(MapDirection.Right);
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0))
             onSelectLevel.Invoke();
     }
 }

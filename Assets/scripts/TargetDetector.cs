@@ -10,7 +10,7 @@ public class TargetDetector : MonoBehaviour
     [SerializeField]
     private string targetTag;
 
-    public void OTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag(targetTag))
         {
@@ -18,7 +18,7 @@ public class TargetDetector : MonoBehaviour
         }
     }
 
-    public void OTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if(other.CompareTag(targetTag))
         {
